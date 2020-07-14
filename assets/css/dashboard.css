@@ -1,0 +1,47 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.row.content {
+    height: 1000px;
+    padding: 0px;
+}
+    
+/* Set gray background color and 100% height */
+.sidenav {
+  /*background-color: #007bff;*/
+  border:none;
+  height: 100%;
+}
+
+.profile-img{
+    height: 100px;
+    margin-bottom: 15px;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #007bff;
+    background-color: #EAECEE !important;
+}
+.rightbar{
+    background: #edf2f9;
+}
+/* Set black background color, white text and some padding */
+footer {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height: auto;} 
+}
+
+.img img{
+  height: 60px !important;
+}

@@ -54,23 +54,38 @@ if(isset($_POST['submit'])){
     $_SESSION['designer_zip'] = $zip; //Stores first name into session variable
 
     //Check if username already exists 
-    $username_check = mysqli_query($con, "SELECT * FROM designer WHERE user_name='$username'");
+    $username_check = mysqli_query($con, "SELECT * FROM designer WHERE username='$username'");
     $num_rows = mysqli_num_rows($username_check);
     if($num_rows > 0){
         array_push($error_array, "username already in use");
        
     }
 
-    if(strlen($about) > 100 || strlen($about) < 30){
+    if(strlen($about) > 150 || strlen($about) < 30){
         array_push($error_array, "Your about must be between 30 and 100 characters");
 
     }
     
     if(empty($error_array)){
+        echo $username;
+        echo $company;
+        echo $birthday;
+        echo $about;
+        echo $address;
+        echo $address2;
+        echo $city;
+        echo $country;
+        echo $zip;
 
-        $query = mysqli_query($con, "INSERT INTO designer VALUES ('', '$email', '$username', '$company', '$birthday', '$about', '$address', '$address2', '$city', '$country', '$zip')");
-        header('location: dashboard.php');
-        $_SESSION['designer_email']
+        $query = mysqli_query($con, "INSERT INTO designer VALUES('','$email', '$username', '$company','$birthday','$about','$address','$address2','$city','$country','$zip')");
+        if($query === TRUE){
+            header('location: dashboard.php?LoginSucess');
+            $_SESSION['designer_email'];
+        }else{
+            echo "Error :". $query ." : " . mysqli_error($con); 
+        }
+
+    
 
           //Clear session variables 
 		$_SESSION['designer_username'] = "";

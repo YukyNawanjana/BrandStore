@@ -17,12 +17,9 @@ $error_array = array();
 
         if($check_login_query == 1){
             $row = mysqli_fetch_array($check_database_query);
-            $first_name = $row['first_name'];
-            $last_name = $row['last_name'];
             $user_role = $row['user_roles'];
            
             if($user_role == 'designer'){
-                $_SESSION['user_name'] = $first_name." ". $last_name;
                 $_SESSION['designer_email'] =  $row['email'];
                 header('location: dashboard.php');
             }else{
