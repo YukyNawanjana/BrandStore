@@ -1,6 +1,6 @@
-<?php /*
+<?php 
 require 'includes/config.php';
-
+require 'includes/upload_handler.php';
 if (isset($_SESSION['designer_email'])) {
 	$userLoggedIn = $_SESSION['designer_email'];
 	$user_details_query = mysqli_query($con, "SELECT * FROM users WHERE email='$userLoggedIn'");
@@ -32,23 +32,6 @@ if(isset($_GET['delete'])){
     
 }
 
-if(isset($_GET['edit'])){
-
-    echo "<div class='modal fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
-    <div class='modal-dialog' role='document'>
-      <div class='modal-content'>
-        <div class='modal-header'>
-          <h5 class='modal-title' id='exampleModalLabel'>Modal title</h5>
-          <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-            <span aria-hidden='true'>&times;</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>";
-}
-
-*/
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +55,7 @@ if(isset($_GET['edit'])){
         <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Welcome <?php// echo $designer_username; ?></a>
+                    <a class="nav-link" href="#">Welcome Yasiru<?php// echo $designer_username; ?></a>
                 </li> 
                 <li class="nav-item active">
                     <a class="nav-link" href="logout.php">Log Out<i class="fas fa-sign-out-alt ml-2"></i></a>
@@ -89,8 +72,8 @@ if(isset($_GET['edit'])){
         <div class="col-sm-2 sidenav">
         <hr>
             <div class="text-center">
-                <h3>User Details</h3> <br>
-                <img src="<?php// echo $user_profice_pic; ?>" class="rounded-circle img-thumbnail profile-img" alt="">
+                <h3>User Details</h3> <br><?php// echo $user_profice_pic; ?>
+                <img src="./assets/images/profile_pic/12.jpg " class="rounded-circle img-thumbnail profile-img" alt="">
                 <h5>user name</h5>
                 <h6>Front-End Developer</h6>
             </div>

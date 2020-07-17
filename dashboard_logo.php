@@ -19,30 +19,34 @@
                         <hr>
                         <?php 
                             
-                           // $result = mysqli_query($con, "SELECT * FROM logo_details");
+                           $result = mysqli_query($con, "SELECT * FROM logo_details");
                         ?>
                             <div class="row justify-content-center">
                                 <table class="table">
                                     <thead class="thead-dark text-center">
                                         <tr>
-                                            <th>Logo</th>
+                                            <th style="width: 30px;">Logo</th>
                                             <th>Name</th>
                                             <th>Price</th>
                                             <th colspan="2">Action</th>
                                         </tr>
                                     </thead>
                                     <?php 
-                                       // while($row = $result->fetch_assoc()): ?>
+                                        while($row = $result->fetch_assoc()): ?>
                                         <tr>
-                                            <td class=""><img src="<?php //echo $row['logo_img']; ?>" style="height: 50px;" alt=""></td>
-                                            <td class="text-center"><?php //echo $row['logo_name']; ?></td>
-                                            <td  class="text-center"> $ <?php// echo $row['price']; ?></td>
+                                            <td>
+                                                <a href="logo_product.php?logo_id=<?php echo $row['id']; ?>">
+                                                    <img class="card-img-top" src="<?php echo $row['logo_img']; ?>" alt="Card image cap" style="width: 170px; "> 
+                                                </a>           
+                                            </td>
+                                            <td style = " "><h5 style = " color: rebeccapurple; padding: 0px; margin: 0px; position: relative; top: 40px; left: 84px;"><?php echo $row['logo_name']; ?></h5></td>
+                                            <td  class="text-center"><h5 style = " color: rebeccapurple; padding: 0px; margin: 0px; position: relative; top: 40px; ">$  <?php echo $row['price']; ?></h5></td>
                                             <td  class="text-center">
-                                                <a href="dashboard.php?edit=<?php //echo $row['id']; ?>" class="btn btn-success"  data-toggle="modal" data-target="#exampleModal">edit</a>
-                                                <a href="dashboard.php?delete=<?php //echo $row['id']; ?>"  class="btn btn-danger">delete</a>
+                                                <a href="dashboard_upload.php?edit=<?php echo $row['id']; ?>" class="btn btn-success" style = " margin: 0px 2px; position: relative; top: 35px;" >edit</a>
+                                                <a href="dashboard.php?delete=<?php echo $row['id']; ?>"  class="btn btn-danger" style = " margin: 0px 2px; position: relative; top: 35px;" >delete</a>
                                             </td>
                                         </tr>
-                                    <?php //endwhile ?>
+                                    <?php endwhile ?>
                                 </table>
                             </div>
                        </div>

@@ -265,6 +265,19 @@
   </div>
 </div>
 
+<!-- Main Section -->
+<div class="container-fluid main-section">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 text-center main-text">
+            <h1>Welcome to BrandStore</h1>
+            <p>Make a logo design online or browse thousands of premium logos for sale. Start for FREE.</p>
+            <br>
+            <button class="main-btn">Get Started</button>
+        </div>
+    </div>
+</div>
+<!-- Main Section End-->
+
     
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

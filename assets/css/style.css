@@ -3,9 +3,71 @@
     padding: 0px;
     box-sizing: border-box;
 }
+/* nav login form and register form */
 .modal-open{
     padding-right: 0px !important;
 }
 .modal-open .show{
     padding-right: 0px !important;
+}
+
+.main-section{
+    background:linear-gradient(rgba(15, 16, 68, 0.349), rgba(17, 86, 126, 0.493)), url('../bg1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 90vh;
+}
+.main-text{
+    position: absolute;
+    top: 40%;
+}
+.main-text h1{
+    color: rgb(255, 255, 255);
+    font-size: 3.5rem;
+    font-weight: bold;
+    animation-name: left-animate;
+    animation-duration: 2.8s;
+}
+.main-text p{
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: rgb(255, 255, 255); 
+}
+.main-btn{
+    background: #007bff;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px 49px !important;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+
+}
+
+
+
+@media screen and (max-width: 425px) {
+    .main-text{
+        top: 25%;
+    }
+    
+    .main-text h1{
+        font-size: 2.5rem;
+    }
+    .main-text p{
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: rgb(255, 255, 255); 
+    }
+    .main-btn{
+        font-size: 20px;
+        padding: 5px 39px !important;
+
+    }
+}
+  
+@keyframes left-animate{
+
+   0%{opacity: 0;}
+   100%{opacity: 1;}
+
 }

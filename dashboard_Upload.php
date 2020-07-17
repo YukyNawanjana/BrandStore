@@ -1,4 +1,7 @@
 <?php include 'dashboard_nav.php'; ?>
+<?php
+
+?>
 
 
                 <div class="nav flex-column nav-pills">
@@ -11,22 +14,79 @@
             <!-- End sidebar -->
 
             <div class="col-sm-10 rightbar">
+               
+                
                 <br>
                 <?php 
                     
-                    //print_r ($display_alert);
+                    if(in_array("Email Uploaded", $display_alert)){
+                        echo "
+                            <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                                <strong>Congratulations ! </strong> Logo Uploaded.
+                                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                <span aria-hidden='true'>&times;</span>
+                                </button>
+                            </div>
+                        "; 
+                    }
+
+                    if(in_array("Upload-Form-Error", $display_alert)){
+                        echo "
+                            <div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                                <strong>Error ! </strong> Please Check Your Upload Form.
+                                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                <span aria-hidden='true'>&times;</span>
+                                </button>
+                            </div>
+                        "; 
+                    }
+                    
+                    if(in_array("Your about must be between 30 and 100 characters", $display_alert)){
+                        echo "
+                            <div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                                <strong>Error ! </strong> Your about must be between 30 and 100 characters.
+                                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                <span aria-hidden='true'>&times;</span>
+                                </button>
+                            </div>
+                        "; 
+                    }
+                   
+                    //Uppdate //
+                    /*
+                    if(in_array("Update Your Logo", $display_alert)){
+                        echo "
+                            <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                                <strong >Update Your Logo</strong>
+                                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                <span aria-hidden='true'>&times;</span>
+                                </button>
+                            </div>
+                        "; 
+                    }
+
+                    if(in_array("Update Faild", $display_alert)){
+                        echo "
+                            <div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                                <strong> Update Faild</strong>
+                                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                <span aria-hidden='true'>&times;</span>
+                                </button>
+                            </div>
+                        "; 
+                    }
+                    */
 
                 ?>
-                <br>
                 <div class="card">
                     <br> 
-                    <h4 class="card-t text-center"><i class="fas fa-cloud-upload-alt mr-3"></i>Upload Logo</h4>
+                    <h4 class="card-t text-center"><i class="fas fa-cloud-upload-alt mr-3"></i>Upload Logo </h4>
                         <!-- Upload from -->
                         <div class="container">
                             <div class="row">
                                 <div class="col-ms-12 col-sm-12">
                                     <hr>
-                                    <form class="form" action="dashboard.php" method="POST" >
+                                    <form class="form" action="dashboard_Upload.php" method="POST" >
                                               
                                         <div class="form-group">
                                             <div class="row">
@@ -37,6 +97,7 @@
                                                     if(isset($_SESSION['upload_logo_name'])) {
                                                         echo $_SESSION['upload_logo_name'];
                                                     } 
+                                                    
                                                     ?>" required>
                                                 </div>
 
@@ -49,7 +110,7 @@
                                                         <input type="number" class="form-control"  name="logo_price" value="<?php 
                                                         if(isset($_SESSION['upload_logo_price'])) {
                                                             echo $_SESSION['upload_logo_price'];
-                                                        } 
+                                                        }
                                                         ?>" required >
                                                     </div>
                                                 </div>
@@ -63,6 +124,7 @@
                                                 if(isset($_SESSION['logo_about'])) {
                                                     echo $_SESSION['logo_about'];
                                                 } 
+                                            
                                                 ?> </textarea>
                                                 <label for="about"><h6>Words</h6><?php
                                                 if(isset($_POST['about'])){

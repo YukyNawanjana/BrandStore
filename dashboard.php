@@ -1,4 +1,3 @@
-
 <?php include 'dashboard_nav.php'; ?>
 
 <div class="nav flex-column nav-pills">
@@ -12,11 +11,34 @@
 
 <div class="col-sm-10 rightbar">
 <br>
-<div class="card">
+   <div class="container">
+        <div class="row">
+            <div class="col-md-12 card">
+                <h3 class="text-center">Home</h3>    
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Logos Sold : 0</h5>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Uploaded Logos: 0</h5>
+                </div>
+                </div>
 
-<h3>Home</h3>
-   
-</div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+
+            </div>
+        </div>
+   </div>
 </div>
 </div>
 </div>

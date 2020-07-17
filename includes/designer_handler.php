@@ -67,15 +67,6 @@ if(isset($_POST['submit'])){
     }
     
     if(empty($error_array)){
-        echo $username;
-        echo $company;
-        echo $birthday;
-        echo $about;
-        echo $address;
-        echo $address2;
-        echo $city;
-        echo $country;
-        echo $zip;
 
         $query = mysqli_query($con, "INSERT INTO designer VALUES('','$email', '$username', '$company','$birthday','$about','$address','$address2','$city','$country','$zip')");
         if($query === TRUE){
